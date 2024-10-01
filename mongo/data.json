@@ -1,0 +1,26 @@
+[
+    {
+        "activity_name": "Activity 1",
+        "current_queue_number": 42,
+        "serving_time": 180,
+        "price": 15
+    },
+    {
+        "activity_name": "Activity 2",
+        "current_queue_number": 28,
+        "serving_time": 300,
+        "price": 10
+    },
+    {
+        "activity_name": "Activity 3",
+        "current_queue_number": 55,
+        "serving_time": 600,
+        "price": 20
+    },
+    {
+        "activity_name": "Activity 4",
+        "current_queue_number": 37,
+        "serving_time": 240,
+        "price": 8
+    }
+]
