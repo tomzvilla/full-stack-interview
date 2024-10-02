@@ -1,8 +1,6 @@
-from typing import Union
-
 from fastapi import FastAPI
 
 app = FastAPI()
 
 
-# TODO implement the needed endpoints
+# TODO: implement the needed endpoints, interacting as needed with the database
