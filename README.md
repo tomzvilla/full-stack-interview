@@ -2,29 +2,22 @@
 
 ## Description
 
-This project is a web app providing a ticketing system. This web app is very simple and consists of a single main entity, *tickets*, whose schema is as follows:
-* activity_name: string
-* current_queue_number: int
-* serving_time: int
-* price: int
+This project is a simple TODO application. This web app is very simple and consists of a single main entity, *todos*, whose schema is as follows:
+* title: string
+* description: string
+* estimated_time: int  # in minutes
 
 Users can:
 * access this page 
-* view available tickets
-* "print" (reserve) a ticket 
-* view the waiting time for a given ticket (that they have "printed" earlier)
+* view current todos
+* add a new todo
+* delete an existing todo
 
-No login or persist user state is required. Imagine going to the terminal of a bank, printing the ticket number for a given service and then going to a screen to check the waiting time.
+This is a simple demo project and no login or persist user state is required: you can assume a single user will be using this sytem.
 
 ## Example 
 
-To give an example, a user might access the web app and see a list of available activities:
-* Activity 1 (Price: $15)
-* Activity 2 (Price: $10)
-* Activity 3 (Price: $20)
-* Activity 4 (Price: $8)
-
-The user could then choose to "print" a ticket for Activity 2. The system would reserve the next available queue number (in this case, 29) for the user. Later, the user can check the waiting time for their ticket, entering their ticket number for that Activity. Given that Activity 2 has a serving time of 300 seconds (5 minutes) per ticket, and there is one person ahead of them (queue number 28), the estimated waiting time would be approximately 5 minutes.
+To give an example, a user can open the web application and see a list of current TODOs. They can then add a new TODO by entering title, description, and estimated time. Once added, the new TODO will appear in the list. If the user decides they no longer need a TODO, they can delete it by clicking a delete button next to the corresponding item. The application will update the list to reflect the changes immediately.
 
 ## Required Tools and Involved Tech Stack
 
@@ -45,9 +38,8 @@ Your job is to implement this web app, starting from the skeleton code provided.
 * You'll be using FastAPI to implement the actual ticket service. This service:
   - Interacts with MongoDB.
   - Is exposed through a REST API (which the dashboard will invoke).
-  - Allows users to view tickets, reserve them and view their waiting times.
+  - Allows users to view, add and delete TODOs.
 * You'll be using React (*dashboard-react* folder) or Next.js (*dashboard-next* folder) to implement the user dashboard, with the features listed above. Next.js is preferred, but React is also acceptable.
 
-All three folders (*mongo*, *service*, *dashboard*) have README.md with the instruction to run the three projects. Those instructions are expected to work unchanged.
-
+All three folders (*mongo*, *service*, *dashboard-\**) have README.md with the instruction to run the three projects. Those instructions are expected to work unchanged.
 

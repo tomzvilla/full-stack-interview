@@ -1,26 +1,17 @@
 [
     {
-        "activity_name": "Activity 1",
-        "current_queue_number": 42,
-        "serving_time": 180,
-        "price": 15
+        "title": "MongoDB",
+        "description": "Load the sample data in MongoDB",
+        "estimated_time": 15
     },
     {
-        "activity_name": "Activity 2",
-        "current_queue_number": 28,
-        "serving_time": 300,
-        "price": 10
+        "title": "FastAPI",
+        "description": "Implement the TODO service with FastAPI",
+        "estimated_time": 45
     },
     {
-        "activity_name": "Activity 3",
-        "current_queue_number": 55,
-        "serving_time": 600,
-        "price": 20
-    },
-    {
-        "activity_name": "Activity 4",
-        "current_queue_number": 37,
-        "serving_time": 240,
-        "price": 8
+        "title": "Dashboard",
+        "description": "Implement the user dashboard with React or Next.js",
+        "estimated_time": 60
     }
 ]
