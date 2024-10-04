@@ -4,4 +4,4 @@ version = "0.1.0"
 description = "A ticketing service using FastAPI"
 requires-python = ">=3.10"
 
-dependencies = ["fastapi[standard]"]
+dependencies = ["fastapi[standard]", "motor>=3.6.0"]

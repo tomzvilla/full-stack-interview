@@ -1,7 +1,22 @@
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
+from .routers import api_v1
+from .db.mongodb_utils import close_mongo_connection, connect_to_mongo
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+]
 
-# TODO: implement the needed endpoints, interacting as needed with the database
-# NOTE: this file imports FastAPI, but you can use Flask if you prefer
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.add_event_handler("startup", connect_to_mongo)
+app.add_event_handler("shutdown", close_mongo_connection)
+
+app.include_router(api_v1.router)
