@@ -17,16 +17,20 @@ export default function TodoList () {
       setShowForm(!showForm);
     };
   
-    const addTodo = (newTodo: ITodo) => {
-      setTodos([...todos, newTodo]);
-      setShowForm(false);
-    };
-
     useEffect(() => {
         const fetchTodos = async () => {
             try {
+                const prevTodos = todos;
                 const response = await axios.get('http://localhost:8000/v1/todos');
-                setTodos(response.data);
+                const updatedTodos = response.data.map((todo: ITodo) => {
+                    const status = prevTodos.find(el => el.id === todo.id)?.done ?? false;
+                    return {
+                        ...todo,
+                        done: status
+                    }
+
+                });
+                setTodos(updatedTodos);
             } catch (err) {
                 console.error(err);
             } finally {
